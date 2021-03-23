@@ -82,10 +82,10 @@ stock_info_df = ps.sqldf(query, locals())
 #stock_info_df.set_index('name', inplace = True)
 
 # plot chart
-stock_info_df.plot(figsize = (40,20), kind='pie', y = 'value', autopct='%1.1f%%',
- startangle=90, shadow=False, labels=stock_info_df['name'], legend = False, fontsize=13)
+ax1 = plt.subplot(121, aspect='equal')
+stock_info_df.plot(figsize = (30,15), ax=ax1, kind='pie', y = 'value', autopct='%1.1f%%',
+ startangle=90, shadow=False, labels=stock_info_df['name'], legend = False, fontsize=11)
 plt.tight_layout()
-plt.show()
 
 #---------------------------------------------------------
 #Get the ratio based on stock type
@@ -94,7 +94,8 @@ type_query = 'select type, sum(value) as type_value from stock_info_df GROUP BY 
 stock_type_grouped_df = ps.sqldf(type_query, locals())
 
 # plot chart
-stock_type_grouped_df.plot(figsize = (40,20), kind='pie', y = 'type_value', autopct='%1.1f%%',
- startangle=90, shadow=False, labels=stock_type_grouped_df['type'], legend = False, fontsize=13)
+ax2 = plt.subplot(122, aspect='equal')
+stock_type_grouped_df.plot(figsize = (30,15), ax=ax2, kind='pie', y = 'type_value', autopct='%1.1f%%',
+ startangle=90, shadow=False, labels=stock_type_grouped_df['type'], legend = False, fontsize=9)
 plt.tight_layout()
 plt.show()
