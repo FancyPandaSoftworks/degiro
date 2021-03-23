@@ -7,9 +7,11 @@ import pandas as pd
 import pandasql as ps
 degiro = degiroapi.DeGiro()
 import matplotlib.pyplot as plt
+import stdiomask
 
 username = input('enter your username: ')
-password = input('Enter your password: ')
+password = stdiomask.getpass(mask='*')
+print('ok zoomer, lets see what we got here')
 degiro.login(username, password)
 
 #---------------------------------------------------------
@@ -93,6 +95,6 @@ stock_type_grouped_df = ps.sqldf(type_query, locals())
 
 # plot chart
 stock_type_grouped_df.plot(figsize = (40,20), kind='pie', y = 'type_value', autopct='%1.1f%%',
- startangle=90, shadow=False, labels=stock_info_df['type'], legend = False, fontsize=13)
+ startangle=90, shadow=False, labels=stock_type_grouped_df['type'], legend = False, fontsize=13)
 plt.tight_layout()
 plt.show()
