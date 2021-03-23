@@ -1,0 +1,6 @@
+degiroapi
+stdiomask
+pandasql
+pandas
+requests
+matplotlib
