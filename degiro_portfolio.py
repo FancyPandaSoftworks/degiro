@@ -5,10 +5,11 @@ from degiroapi.utils import pretty_json
 from datetime import datetime, timedelta
 import pandas as pd
 import pandasql as ps
-degiro = degiroapi.DeGiro()
 import matplotlib.pyplot as plt
 import stdiomask
+import mpld3
 
+degiro = degiroapi.DeGiro()
 username = input('enter your username: ')
 password = stdiomask.getpass(mask='*')
 print('ok zoomer, lets see what we got here')
@@ -83,8 +84,8 @@ stock_info_df = ps.sqldf(query, locals())
 
 # plot chart
 ax1 = plt.subplot(121, aspect='equal')
-stock_info_df.plot(figsize = (30,15), ax=ax1, kind='pie', y = 'value', autopct='%1.1f%%',
- startangle=90, shadow=False, labels=stock_info_df['name'], legend = False, fontsize=11)
+stock_info_df.plot(figsize=(20, 10), ax=ax1, kind='pie', y = 'value', autopct='%1.1f%%',
+ startangle = 90, shadow=False, labels=stock_info_df['name'], legend = False, fontsize=13)
 plt.tight_layout()
 
 #---------------------------------------------------------
@@ -95,7 +96,13 @@ stock_type_grouped_df = ps.sqldf(type_query, locals())
 
 # plot chart
 ax2 = plt.subplot(122, aspect='equal')
-stock_type_grouped_df.plot(figsize = (30,15), ax=ax2, kind='pie', y = 'type_value', autopct='%1.1f%%',
- startangle=90, shadow=False, labels=stock_type_grouped_df['type'], legend = False, fontsize=9)
+stock_type_grouped_df.plot(figsize=(20, 10), ax=ax2, kind='pie', y = 'type_value', autopct='%1.1f%%',
+ startangle = 90, shadow=False, labels=stock_type_grouped_df['type'], legend = False, fontsize=13)
 plt.tight_layout()
-plt.show()
+mpld3.show()
+
+
+
+
+
+
