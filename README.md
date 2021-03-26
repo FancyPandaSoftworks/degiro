@@ -1,7 +1,9 @@
 # degiro
 How to use it to check your portfolio and your stonks gains: 
 
-0) PLEASE HAVE PYTHON DOWNLOADED ON YOUR PC/LAPTOP/WHATEVER, AND PLEASE HAVE PIP INSTALLED AS WELL. MORE INFORMATION SEE HERE: 
+0) Click on the green button (code) and click download zip. Unzip this somewhere you like
+
+0.5) PLEASE HAVE PYTHON DOWNLOADED ON YOUR PC/LAPTOP/WHATEVER, AND PLEASE HAVE PIP INSTALLED AS WELL. MORE INFORMATION SEE HERE: 
 
 https://www.python.org/downloads/ 
 
