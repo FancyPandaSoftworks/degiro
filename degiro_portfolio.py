@@ -163,5 +163,5 @@ stock_type_grouped_df.plot(figsize=(20, 10), ax=ax2, kind='pie', y='type_value',
                            startangle=90, shadow=False, labels=stock_type_grouped_df['type'], legend=False, fontsize=13)
 
 plt.tight_layout()
-print('press the button bottom left to move the pie charts')
+print('PRESS THE BUTTON BOTTTOM LEFT TO MOVE THE PIE CHARTS')
 mpld3.show()
