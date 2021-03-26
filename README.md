@@ -5,7 +5,9 @@ How to use it to check your portfolio and your stonks gains:
 
 https://www.python.org/downloads/ 
 
-AND HERE:https://phoenixnap.com/kb/install-pip-windows 
+AND HERE:
+
+https://phoenixnap.com/kb/install-pip-windows 
 
 1) After downloading, shift right click in the folder where the files are and select 'open powershell window here'. 
 
