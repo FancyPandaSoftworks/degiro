@@ -4,3 +4,4 @@ pandasql
 pandas
 requests
 matplotlib
+mpld3
