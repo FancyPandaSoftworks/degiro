@@ -15,8 +15,8 @@ def login_degiro():
     one_time_password = None
     username = input('enter your username: ')
     password = stdiomask.getpass(mask='*')
-    one_time = input('Do you have one time password? y/n ')
-    if one_time:
+    one_time = input('Do you have a one time password? y/n ')
+    if one_time == 'y':
         one_time_password = input('please fill in your one_time_password: ')
     degiro.login(username, password, one_time_password)
     print('ok zoomer, lets see what we got here')
