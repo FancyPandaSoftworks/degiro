@@ -122,21 +122,6 @@ file_name = fnmatch.filter(os.listdir('.'), 'stonks_profit.html')
 webbrowser.open('file://' + os.path.realpath(file_name[0]))
 
 
-### Option: Use file search, but can be so slow
-'''
-def find_files(filename, search_path):
-   result = []
-
-# Wlaking top-down from the root
-   for root, dir, files in os.walk(search_path):
-      if filename in files:
-         result.append(os.path.join(root, filename))
-   return result
-
-file_name = find_files("stonks_profit.html",os.path.abspath(os.sep)))
-webbrowser.open(url=file_name[0])
-'''
-
 # ---------------------------------------------------------
 """
 Get the joined table to get information like pie charts and the distribution of the type of stocks
