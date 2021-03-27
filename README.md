@@ -18,3 +18,6 @@ https://phoenixnap.com/kb/install-pip-windows
 3) Type in python degiro_portfolio.py
 
 4) Everything should run from here
+
+
+The scripts are built upon this api: https://github.com/lolokraus/DegiroAPI
