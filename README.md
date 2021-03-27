@@ -17,4 +17,4 @@ https://phoenixnap.com/kb/install-pip-windows
 
 3) Type in python degiro_portfolio.py
 
-4) Type in your credentials of degiro, and everything should run from here
+4) Everything should run from here
