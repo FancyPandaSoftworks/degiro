@@ -7,6 +7,8 @@ How to use it to check your portfolio and your stonks gains:
 
 https://www.python.org/downloads/ 
 
+PLEASE CLICK ON THE BUTTON ADD PATH!!!
+
 AND HERE:
 
 https://phoenixnap.com/kb/install-pip-windows 
