@@ -1,4 +1,4 @@
-degiroapi
+git+https://github.com/pforero/DegiroAPI.git@totp
 stdiomask
 pandasql
 pandas
