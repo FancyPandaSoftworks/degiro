@@ -1,7 +1,4 @@
 import degiroapi
-from degiroapi.product import Product
-from degiroapi.order import Order
-from degiroapi.utils import pretty_json
 from datetime import datetime, timedelta
 import pandas as pd
 import pandasql as ps
@@ -9,17 +6,19 @@ import matplotlib.pyplot as plt
 import stdiomask
 import mpld3
 import webbrowser
-import numpy as np
 import fnmatch
 import os
 degiro = degiroapi.DeGiro()
 
 
 def login_degiro():
+    one_time_password = None
     username = input('enter your username: ')
     password = stdiomask.getpass(mask='*')
-
-    degiro.login(username, password)
+    one_time = input('Do you have one time password? y/n ')
+    if one_time:
+        one_time_password = input('please fill in your one_time_password: ')
+    degiro.login(username, password, one_time_password)
     print('ok zoomer, lets see what we got here')
 
 
