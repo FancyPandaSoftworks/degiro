@@ -12,6 +12,8 @@ PLEASE CLICK ON THE BUTTON ADD PATH!!!
 AND HERE:
 
 https://phoenixnap.com/kb/install-pip-windows 
+Follow the instructions, install or copy paste https://bootstrap.pypa.io/get-pip.py into a file and name it get-pip.py
+
 
 1) After downloading, shift right click in the folder where the files are and select 'open powershell window here', or 'unix shell' if you have linux, or anaconda prompt if you use that for Python
 
