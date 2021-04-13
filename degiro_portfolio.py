@@ -8,6 +8,7 @@ import mpld3
 import webbrowser
 import fnmatch
 import os
+pd.options.mode.chained_assignment = None
 degiro = degiroapi.DeGiro()
 
 
@@ -48,7 +49,7 @@ transactions_df = pd.DataFrame(transactions, columns=['id', 'productId', 'buysel
 
 # Split the transaction_df into buy and sell
 buy_transaction_df = transactions_df[transactions_df['buysell'] == 'B']
-buy_transaction_df['totalPlusFeeInBaseCurrency'] = buy_transaction_df['totalPlusFeeInBaseCurrency'] * -1
+buy_transaction_df.loc[:, 'totalPlusFeeInBaseCurrency'] = buy_transaction_df.loc[:, 'totalPlusFeeInBaseCurrency'] * -1
 
 # Get the average buy of the stock
 grouped_buy_transaction_query = 'select productId, ROUND(SUM(totalPlusFeeInBaseCurrency)/SUM(quantity), 2) as buy_average ' \
@@ -57,7 +58,7 @@ grouped_buy_df = ps.sqldf(grouped_buy_transaction_query, locals())
 
 # Split into sell only transactions
 sell_transaction_df = transactions_df[transactions_df['buysell'] == 'S']
-sell_transaction_df['quantity'] = sell_transaction_df['quantity'] * -1
+sell_transaction_df.loc[:, 'quantity'] = sell_transaction_df.loc[:, 'quantity'] * -1
 # Get the average sell of the stock
 grouped_sell_transaction_query = 'select productId, ROUND(SUM(totalPlusFeeInBaseCurrency)/SUM(quantity), 2) as sell_average, quantity ' \
                                  'from sell_transaction_df GROUP BY productId'
